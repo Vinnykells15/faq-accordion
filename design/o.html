@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ Accordion</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Worksans";
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        color: hsl(292, 42%, 14%);
+      }
+
+      @font-face {
+        font-family: "Worksans";
+        src: url(/assets/fonts/WorkSans-Italic-VariableFont_wght.ttf);
+        src: url(/assets/fonts/WorkSans-VariableFont_wght.ttf);
+      }
+
+      .top-image {
+        height: 20%;
+        background-image: url("/assets/images/background-pattern-desktop.svg"); /* Replace with your image URL */
+        background-size: cover;
+        background-position: center;
+      }
+
+      .main-container {
+        height: 80%;
+        background-color: #f5e9fc;
+        position: relative;
+      }
+
+      .faq-container {
+        background-color: hsl(0, 0%, 100%);
+        max-width: 300px;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .faq-title {
+        text-align: center;
+        font-size: 24px;
+        color: #6e2aa6;
+        margin-bottom: 20px;
+      }
+
+      .faq-item {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+      }
+
+      .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .faq-question h2 {
+        font-size: 16px;
+        margin: 0;
+      }
+
+      .toggle {
+        font-size: 18px;
+        font-weight: bold;
+        color: #6e2aa6;
+      }
+
+      .faq-answer {
+        display: none;
+        font-size: 14px;
+        margin-top: 10px;
+        line-height: 1.5;
+      }
+
+      .faq-question.active + .faq-answer {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-image"></div>
+    <div class="main-container">
+      <div class="faq-container">
+        <h1 class="faq-title">FAQs</h1>
+        <div class="faq-item">
+          <div class="faq-question active">
+            <h2>What is Frontend Mentor, and how will it help me?</h2>
+            <span class="toggle">+</span>
+          </div>
+          <p class="faq-answer">
+            Frontend Mentor offers realistic coding challenges to help
+            developers improve their frontend coding skills with projects in
+            HTML, CSS, and JavaScript. It’s suitable for all levels and ideal
+            for portfolio building.
+          </p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h2>Is Frontend Mentor free?</h2>
+            <span class="toggle">+</span>
+          </div>
+          <p class="faq-answer">
+            Yes, Frontend Mentor offers both free and premium coding challenges,
+            with the free option providing access to a range of projects
+            suitable for all skill levels.
+          </p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h2>Can I use Frontend Mentor projects in my portfolio?</h2>
+            <span class="toggle">+</span>
+          </div>
+          <p class="faq-answer">
+            Yes, you can use projects completed on Frontend Mentor in your
+            portfolio. It's an excellent way to showcase your skills to
+            potential employers!
+          </p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h2>How can I get help if I’m stuck on a challenge?</h2>
+            <span class="toggle">+</span>
+          </div>
+          <p class="faq-answer">
+            The best place to get help is inside Frontend Mentor's Discord
+            community. There's a help channel where you can ask questions and
+            seek support from other community members.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+      // FAQ toggle functionality
+      const questions = document.querySelectorAll(".faq-question");
+
+      questions.forEach((question) => {
+        question.addEventListener("click", () => {
+          const active = document.querySelector(".faq-question.active");
+          if (active && active !== question) {
+            active.classList.remove("active");
+            active.nextElementSibling.style.display = "none";
+            active.querySelector(".toggle").textContent = "+";
+          }
+
+          question.classList.toggle("active");
+          const answer = question.nextElementSibling;
+          if (answer) {
+            answer.style.display = question.classList.contains("active")
+              ? "block"
+              : "none";
+            question.querySelector(".toggle").textContent =
+              question.classList.contains("active") ? "-" : "+";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

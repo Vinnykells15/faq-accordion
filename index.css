@@ -1,5 +1,77 @@
-body  {
-  background-color: gray;
+body {
+  background-color: hsl(275, 100%, 97%);
+  font-family: "Worksans";
+  color: hsl(292, 42%, 14%);
+  margin: 0;
 }
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+
+@font-face {
+  font-family: "Worksans";
+  src: url(/assets/fonts/WorkSans-Italic-VariableFont_wght.ttf);
+  src: url(/assets/fonts/WorkSans-VariableFont_wght.ttf);
+}
+
+.top-image {
+  height: 30vh;
+  background-image: url("./assets/images/background-pattern-desktop.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  padding: 20px;
+  margin: auto;
+  max-width: 300px;
+  height: auto;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  position: relative;
+  top: -60px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.accordion {
+  display: flex;
+  align-items: center;
+  margin-top: -15px;
+  margin-bottom: -20px;
+}
+
+.star {
+  padding-right: 10px;
+  width: 7%;
+}
+
+.questions div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: -20px;
+}
+
+.questions img {
+  width: 6%;
+}
+
+h6 {
+  font-weight: 600;
+}
+
+p {
+  font-size: 0.7rem;
+}
+
+.attribution {
+  margin-top: -40px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
