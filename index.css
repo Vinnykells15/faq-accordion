@@ -21,7 +21,7 @@ body {
 .container {
   padding: 20px;
   margin: auto;
-  max-width: 300px;
+  max-width: 350px;
   height: auto;
   background-color: hsl(0, 0%, 100%);
   border-radius: 10px;
@@ -47,6 +47,7 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-bottom: -20px;
+  cursor: url("/assets/images/cursor.svg") 0 0, pointer;
 }
 
 .questions img {
@@ -57,8 +58,16 @@ h6 {
   font-weight: 600;
 }
 
+h6:hover {
+  color: hsl(293, 68%, 46%);
+}
+
 p {
-  font-size: 0.7rem;
+  display: none;
+  font-size: 0.65rem;
+  margin: 5px 0 0 0;
+  color: hsl(292, 16%, 49%);
+  line-height: 1rem;
 }
 
 .attribution {
@@ -74,4 +83,10 @@ p {
 
 .attribution a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 300px;
+  }
 }
